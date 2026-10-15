@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>키친빌리지 | 바나나F&B 공유주방 브랜드</title>
+<meta name="description" content="1천만원으로 시작하는 공유주방, 키친빌리지. 권리금·인테리어 부담 없이 배달 전문 창업 및 프랜차이즈 확장을 지원합니다.">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS (Play CDN) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Noto Sans KR', 'sans-serif'],
+        },
+        colors: {
+          brand: {
+            50: '#FFF6EC',
+            100: '#FEE9D2',
+            200: '#FDD2A5',
+            300: '#FBB36C',
+            400: '#F2993F',
+            500: '#E8872E',
+            600: '#CC6E1C',
+            700: '#A85714',
+            800: '#824314',
+            900: '#5F3313',
+          },
+          ink: {
+            900: '#141B2E',
+            800: '#1C2740',
+            700: '#2A3655',
+            600: '#4A5578',
+            500: '#68728F',
+            400: '#99A1B8',
+            200: '#E2E5ED',
+            100: '#F1F3F7',
+            50: '#F8F9FB',
+          }
+        },
+        boxShadow: {
+          soft: '0 10px 40px -10px rgba(16, 24, 40, 0.12)',
+          card: '0 4px 24px -4px rgba(16, 24, 40, 0.08)',
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Font Awesome (JS Kit, inline SVG) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans KR', sans-serif; }
+  .text-balance { text-wrap: balance; }
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 0; height: 2px;
+    background: #E8872E;
+    transition: width .2s ease;
+  }
+  .nav-link:hover::after { width: 100%; }
+  .accordion-content { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .accordion-item.open .accordion-content { max-height: 500px; }
+  .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+  .accordion-icon { transition: transform .25s ease; }
+  .fade-up { animation: fadeUp .6s ease both; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(16px);} to {opacity:1; transform:none;} }
+  .hero-bg {
+    background: radial-gradient(circle at 20% 20%, rgba(255,138,66,0.25), transparent 45%),
+                radial-gradient(circle at 85% 10%, rgba(255,107,26,0.18), transparent 40%),
+                linear-gradient(135deg, #101828 0%, #1D2939 55%, #101828 100%);
+  }
+  .noise-grid {
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  #mobile-menu { transition: max-height .3s ease, opacity .25s ease; }
+</style>
+</head>
+<body class="bg-white text-ink-800 antialiased">
+
+<!-- ======================= HEADER ======================= -->
+<header id="top" class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-ink-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href="#top" class="flex items-center gap-2 shrink-0">
+        <span class="w-10 h-10 rounded-xl bg-ink-900 flex items-center justify-center shadow-card shrink-0">
+          <svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="20" r="12.5" stroke="white" stroke-width="2.4"/>
+            <line x1="28" y1="20" x2="37" y2="20" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="37.3" cy="20" r="1.6" fill="white"/>
+            <ellipse cx="12" cy="15.5" rx="2.3" ry="3.6" stroke="white" stroke-width="1.6"/>
+            <line x1="12" y1="19" x2="12" y2="27" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="19" y1="12" x2="19" y2="18" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="21.5" y1="12" x2="21.5" y2="18" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.2" y1="18" x2="20.2" y2="27" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="flex flex-col leading-none">
+          <span class="text-lg lg:text-xl font-black text-ink-900 tracking-tight">키친빌리지</span>
+          <span class="text-[10px] lg:text-xs font-bold text-brand-600 tracking-wide">KITCHEN VILLAGE</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-10">
+        <a href="#brand" class="nav-link text-sm font-medium text-ink-700 hover:text-brand-600">브랜드 소개</a>
+        <a href="#locations" class="nav-link text-sm font-medium text-ink-700 hover:text-brand-600">지점안내</a>
+        <a href="#benefits" class="nav-link text-sm font-medium text-ink-700 hover:text-brand-600">입점혜택</a>
+        <a href="#cases" class="nav-link text-sm font-medium text-ink-700 hover:text-brand-600">성공사례</a>
+        <a href="#contact" class="nav-link text-sm font-medium text-ink-700 hover:text-brand-600">입점문의</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="tel:1588-0000" class="text-sm font-semibold text-ink-700 hover:text-brand-600 flex items-center gap-1.5">
+          <i class="fa-solid fa-phone-volume text-brand-500"></i> 1588-0000
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-card transition">
+          상담 신청 <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center text-ink-800" aria-label="메뉴 열기">
+        <i class="fa-solid fa-bars text-xl" id="menu-icon-open"></i>
+        <i class="fa-solid fa-xmark text-xl hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu" class="lg:hidden max-h-0 overflow-hidden opacity-0 bg-white border-t border-ink-100">
+    <div class="px-4 sm:px-6 py-4 flex flex-col gap-1">
+      <a href="#brand" class="mobile-link py-3 text-base font-medium text-ink-700 border-b border-ink-100">브랜드 소개</a>
+      <a href="#locations" class="mobile-link py-3 text-base font-medium text-ink-700 border-b border-ink-100">지점안내</a>
+      <a href="#benefits" class="mobile-link py-3 text-base font-medium text-ink-700 border-b border-ink-100">입점혜택</a>
+      <a href="#cases" class="mobile-link py-3 text-base font-medium text-ink-700 border-b border-ink-100">성공사례</a>
+      <a href="#contact" class="mobile-link py-3 text-base font-medium text-ink-700 border-b border-ink-100">입점문의</a>
+      <a href="#contact" class="mobile-link mt-4 inline-flex items-center justify-center gap-2 bg-brand-500 text-white text-sm font-bold px-5 py-3 rounded-full">
+        상담 신청하기 <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section id="hero" class="relative hero-bg noise-grid pt-28 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-2 bg-white/10 text-brand-200 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full border border-white/10 mb-6 fade-up">
+        <i class="fa-solid fa-store"></i> 바나나F&B 공식 공유주방 브랜드
+      </span>
+      <h1 class="text-balance text-3xl sm:text-4xl lg:text-6xl font-black text-white leading-[1.25] lg:leading-[1.2] mb-6 fade-up" style="animation-delay:.05s">
+        1천만 원으로<br class="hidden sm:block">
+        <span class="text-brand-400">내 식당 창업</span> 및<br class="hidden sm:block">
+        프랜차이즈 확장의 꿈을 현실로
+      </h1>
+      <p class="text-balance text-base sm:text-lg text-ink-200/90 mb-10 leading-relaxed fade-up" style="animation-delay:.1s">
+        권리금·인테리어 부담 없는 풀옵션 공유주방, 바나나F&B <b class="text-white">키친빌리지</b>.<br>
+        초기 자본 부담은 줄이고, 매출에만 집중하세요.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 fade-up" style="animation-delay:.15s">
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-base px-7 py-4 rounded-full shadow-soft transition">
+          <i class="fa-solid fa-handshake"></i> 입점 및 제휴 문의하기
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-base px-7 py-4 rounded-full border border-white/20 transition">
+          <i class="fa-regular fa-clock"></i> 1분 간편 투어 예약
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="grid grid-cols-3 sm:flex sm:items-center gap-6 sm:gap-10 mt-14 pt-8 border-t border-white/10 max-w-xl">
+        <div class="fade-up" style="animation-delay:.2s">
+          <p class="text-2xl lg:text-3xl font-black text-white">0<span class="text-brand-400">원</span></p>
+          <p class="text-xs text-ink-400 mt-1">권리금·인테리어</p>
+        </div>
+        <div class="fade-up" style="animation-delay:.25s">
+          <p class="text-2xl lg:text-3xl font-black text-white">A급</p>
+          <p class="text-xs text-ink-400 mt-1">배달 핵심상권</p>
+        </div>
+        <div class="fade-up" style="animation-delay:.3s">
+          <p class="text-2xl lg:text-3xl font-black text-white">24/7</p>
+          <p class="text-xs text-ink-400 mt-1">운영 지원 시스템</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BRAND INTRO ======================= -->
+<section id="brand" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div>
+        <p class="text-brand-600 font-bold text-sm mb-3 tracking-wide">BRAND STORY</p>
+        <h2 class="text-balance text-2xl sm:text-3xl lg:text-4xl font-black text-ink-900 leading-tight mb-5">
+          바나나F&B가 만드는<br>소자본 창업의 새로운 기준
+        </h2>
+        <p class="text-ink-600 leading-relaxed mb-8">
+          키친빌리지는 바나나F&B가 운영하는 공유주방 브랜드로, 배달 전문점·프랜차이즈 가맹점을 위한
+          풀옵션 주방 공간을 제공합니다. 높은 권리금과 인테리어 비용 때문에 창업을 미루고 있는 예비 사장님,
+          그리고 빠른 매장 확장을 고민하는 프랜차이즈 본사 모두가 선택하는 이유입니다.
+        </p>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <p class="text-3xl font-black text-ink-900">12<span class="text-brand-500">개</span></p>
+            <p class="text-sm text-ink-500 mt-1">전국 운영 지점</p>
+          </div>
+          <div>
+            <p class="text-3xl font-black text-ink-900">300<span class="text-brand-500">+</span></p>
+            <p class="text-sm text-ink-500 mt-1">입점 브랜드 수</p>
+          </div>
+          <div>
+            <p class="text-3xl font-black text-ink-900">98<span class="text-brand-500">%</span></p>
+            <p class="text-sm text-ink-500 mt-1">입점 만족도</p>
+          </div>
+          <div>
+            <p class="text-3xl font-black text-ink-900">1,000<span class="text-brand-500">만원</span></p>
+            <p class="text-sm text-ink-500 mt-1">평균 창업 비용</p>
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl shadow-soft overflow-hidden">
+          <img src="images/exterior-1.jpg" alt="키친빌리지 홍대점 건물 외관" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-soft p-5 w-56 border border-ink-100">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-full bg-brand-50 text-brand-600 flex items-center justify-center">
+              <i class="fa-solid fa-shield-heart"></i>
+            </span>
+            <div>
+              <p class="text-sm font-bold text-ink-900">위생·방역 관리</p>
+              <p class="text-xs text-ink-500">전문 인력 상시 운영</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -top-6 -right-6 bg-ink-900 rounded-2xl shadow-soft px-5 py-4 border border-white/10">
+          <p class="text-xs text-brand-400 font-bold tracking-wide mb-0.5">NOW OPEN</p>
+          <p class="text-white font-black text-lg leading-none">키친빌리지 홍대점</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BENEFITS ======================= -->
+<section id="benefits" class="py-20 lg:py-28 bg-ink-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-brand-600 font-bold text-sm mb-3 tracking-wide">WHY KITCHEN VILLAGE</p>
+      <h2 class="text-balance text-2xl sm:text-3xl lg:text-4xl font-black text-ink-900 leading-tight">
+        키친빌리지만의<br class="sm:hidden"> 차별화된 입점 혜택
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+      <!-- Card 1 -->
+      <div class="group bg-white rounded-2xl p-7 shadow-card border border-ink-100 hover:-translate-y-1.5 hover:shadow-soft transition">
+        <span class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+          <i class="fa-solid fa-coins"></i>
+        </span>
+        <h3 class="font-bold text-lg text-ink-900 mb-2">초기 비용 최소화</h3>
+        <p class="text-sm text-ink-600 leading-relaxed">보증금 외 시설·인테리어 비용 부담 없이, 1천만 원대 자본으로 바로 영업을 시작할 수 있습니다.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="group bg-white rounded-2xl p-7 shadow-card border border-ink-100 hover:-translate-y-1.5 hover:shadow-soft transition">
+        <span class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+          <i class="fa-solid fa-location-dot"></i>
+        </span>
+        <h3 class="font-bold text-lg text-ink-900 mb-2">A급 배달 상권 선점</h3>
+        <p class="text-sm text-ink-600 leading-relaxed">배달 주문이 집중되는 핵심 상권에 자리잡아, 입점 즉시 높은 주문 전환율을 기대할 수 있습니다.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="group bg-white rounded-2xl p-7 shadow-card border border-ink-100 hover:-translate-y-1.5 hover:shadow-soft transition">
+        <span class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+          <i class="fa-solid fa-headset"></i>
+        </span>
+        <h3 class="font-bold text-lg text-ink-900 mb-2">운영 지원 서비스</h3>
+        <p class="text-sm text-ink-600 leading-relaxed">위생·방역 관리, 공용 창고, 마케팅 연계까지 매장 운영에 필요한 서비스를 한 번에 지원합니다.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="group bg-white rounded-2xl p-7 shadow-card border border-ink-100 hover:-translate-y-1.5 hover:shadow-soft transition">
+        <span class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl mb-5 group-hover:bg-brand-500 group-hover:text-white transition">
+          <i class="fa-solid fa-layer-group"></i>
+        </span>
+        <h3 class="font-bold text-lg text-ink-900 mb-2">맞춤형 공간 설계</h3>
+        <p class="text-sm text-ink-600 leading-relaxed">프랜차이즈 멀티브랜드 운영과 배달 전문점에 최적화된 레이아웃과 설비를 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LOCATIONS ======================= -->
+<section id="locations" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
+      <div>
+        <p class="text-brand-600 font-bold text-sm mb-3 tracking-wide">LOCATIONS</p>
+        <h2 class="text-balance text-2xl sm:text-3xl lg:text-4xl font-black text-ink-900 leading-tight">
+          가까운 키친빌리지 지점을 확인하세요
+        </h2>
+      </div>
+      <p class="text-ink-500 text-sm max-w-sm">배달 수요가 높은 핵심 상권 위주로 지점을 지속 확장하고 있습니다.</p>
+    </div>
+
+    <!-- 홍대점 Featured -->
+    <div class="grid lg:grid-cols-2 gap-0 bg-white rounded-3xl border border-ink-100 shadow-card overflow-hidden mb-8">
+      <div class="relative h-72 lg:h-auto min-h-[320px]">
+        <img src="images/street-view.jpg" alt="키친빌리지 홍대점 건물 전경" class="w-full h-full object-cover">
+        <span class="absolute top-5 left-5 bg-white/95 text-brand-700 text-xs font-bold px-3 py-1.5 rounded-full shadow-card">● 운영중</span>
+        <img src="images/sign-closeup.jpg" alt="키친빌리지 홍대점 간판" class="absolute -bottom-0 right-0 lg:right-0 w-44 sm:w-56 rounded-tl-2xl border-t border-l border-white/40 shadow-soft">
+      </div>
+      <div class="p-8 lg:p-12 flex flex-col justify-center">
+        <h3 class="font-black text-2xl text-ink-900 mb-2">키친빌리지 홍대점</h3>
+        <p class="text-sm text-ink-500 mb-5"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>서울 마포구 홍대입구 상권 일대</p>
+        <ul class="flex flex-wrap gap-2 mb-6">
+          <li class="text-xs font-medium bg-ink-100 text-ink-600 px-2.5 py-1 rounded-full">배달 전문 최적화</li>
+          <li class="text-xs font-medium bg-ink-100 text-ink-600 px-2.5 py-1 rounded-full">7개 호실 운영중</li>
+          <li class="text-xs font-medium bg-ink-100 text-ink-600 px-2.5 py-1 rounded-full">공용 라커룸</li>
+          <li class="text-xs font-medium bg-ink-100 text-ink-600 px-2.5 py-1 rounded-full">휴게공간</li>
+        </ul>
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2 mb-7 text-sm">
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">1호실</span> 후바오 상하이찜닭</p>
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">2호실</span> 파스타공방</p>
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">3호실</span> 딜리어트 마포점</p>
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">4호실</span> 프리티피즈</p>
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">5호실</span> 하마의한줄김밥</p>
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">6호실</span> 마장동우시장육회</p>
+          <p class="text-ink-700"><span class="text-brand-600 font-bold">7호실</span> 짜오차이 족발덮밥</p>
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700 w-fit">
+          입점 상담 신청하기 <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- 평면도 -->
+    <div class="grid md:grid-cols-[320px_1fr] gap-8 items-center bg-ink-50 rounded-3xl p-8 lg:p-10 mb-14">
+      <img src="images/floorplan.webp" alt="키친빌리지 홍대점 3층 평면도" class="w-full rounded-xl border border-ink-200 shadow-card">
+      <div>
+        <p class="text-brand-600 font-bold text-xs mb-2 tracking-wide">FLOOR PLAN</p>
+        <h4 class="font-black text-xl text-ink-900 mb-3">독립된 7개 호실 + 공용 공간 구성</h4>
+        <p class="text-sm text-ink-600 leading-relaxed">각 호실은 독립 조리 공간으로 분리되어 있으며, 공용 라커룸과 휴게실을 함께 이용할 수 있습니다. 전용 입구를 통해 동선이 겹치지 않도록 설계되어 다수의 브랜드가 함께 운영해도 쾌적합니다.</p>
+      </div>
+    </div>
+
+    <!-- 확장 예정 지점 -->
+    <p class="text-sm font-bold text-ink-500 mb-5">확장 예정 지점</p>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="rounded-2xl overflow-hidden border border-ink-100 shadow-card hover:shadow-soft transition">
+        <div class="h-32 bg-gradient-to-br from-ink-700 to-ink-900 flex items-center justify-center relative">
+          <i class="fa-solid fa-building text-white/20 text-5xl"></i>
+          <span class="absolute top-4 left-4 bg-white/90 text-brand-700 text-xs font-bold px-3 py-1 rounded-full">준비중</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-lg text-ink-900 mb-1">강서 화곡점</h3>
+          <p class="text-sm text-ink-500 mb-4"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>서울 강서구 화곡동 일대</p>
+          <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700">
+            사전 상담 신청 <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-dashed border-ink-200 shadow-card hover:shadow-soft transition">
+        <div class="h-32 bg-ink-100 flex items-center justify-center relative">
+          <i class="fa-solid fa-hammer text-ink-300 text-5xl"></i>
+          <span class="absolute top-4 left-4 bg-ink-900 text-white text-xs font-bold px-3 py-1 rounded-full">오픈 예정</span>
+        </div>
+        <div class="p-6">
+          <h3 class="font-bold text-lg text-ink-900 mb-1">인천 부평점</h3>
+          <p class="text-sm text-ink-500 mb-4"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>인천 부평구 일대 · 선입점 상담 가능</p>
+          <a href="#contact" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 hover:text-brand-700">
+            사전 상담 신청 <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SOCIAL PROOF ======================= -->
+<section id="cases" class="py-20 lg:py-28 bg-ink-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="text-brand-400 font-bold text-sm mb-3 tracking-wide">SUCCESS STORY</p>
+      <h2 class="text-balance text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">
+        키친빌리지와 함께 성장한<br class="sm:hidden"> 사장님들의 이야기
+      </h2>
+    </div>
+
+    <!-- Brand logos: 홍대점 실입점 7개 브랜드 -->
+    <p class="text-center text-ink-400 text-xs font-bold tracking-wide mb-5">키친빌리지 홍대점 입점 브랜드</p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2">
+        <span class="text-brand-400 text-[10px] font-bold">1호실</span>
+        <span class="text-white/70 font-bold text-xs">후바오 상하이찜닭</span>
+      </div>
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2">
+        <span class="text-brand-400 text-[10px] font-bold">2호실</span>
+        <span class="text-white/70 font-bold text-xs">파스타공방</span>
+      </div>
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2">
+        <span class="text-brand-400 text-[10px] font-bold">3호실</span>
+        <span class="text-white/70 font-bold text-xs">딜리어트 마포점</span>
+      </div>
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2">
+        <span class="text-brand-400 text-[10px] font-bold">4호실</span>
+        <span class="text-white/70 font-bold text-xs">프리티피즈</span>
+      </div>
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2">
+        <span class="text-brand-400 text-[10px] font-bold">5호실</span>
+        <span class="text-white/70 font-bold text-xs">하마의한줄김밥</span>
+      </div>
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2">
+        <span class="text-brand-400 text-[10px] font-bold">6호실</span>
+        <span class="text-white/70 font-bold text-xs">마장동우시장육회</span>
+      </div>
+      <div class="h-16 rounded-xl bg-white/5 border border-white/10 flex flex-col items-center justify-center gap-0.5 text-center px-2 col-span-2 sm:col-span-1">
+        <span class="text-brand-400 text-[10px] font-bold">7호실</span>
+        <span class="text-white/70 font-bold text-xs">짜오차이 족발덮밥</span>
+      </div>
+      <div class="h-16 rounded-xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-center px-2">
+        <a href="#contact" class="text-brand-400 font-bold text-xs">+ 8호실 입점문의</a>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
+        <i class="fa-solid fa-quote-left text-brand-400 text-2xl mb-4"></i>
+        <p class="text-ink-200 text-sm leading-relaxed mb-6">"권리금 걱정 없이 배달 매장을 두 달 만에 오픈했어요. 초기 자본 부담이 확 줄어서 메뉴 개발에 더 집중할 수 있었습니다."</p>
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-300 flex items-center justify-center"><i class="fa-solid fa-user"></i></span>
+          <div>
+            <p class="text-sm font-bold text-white">김O현 사장님</p>
+            <p class="text-xs text-ink-400">홍대점 · 배달 전문 브랜드</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
+        <i class="fa-solid fa-quote-left text-brand-400 text-2xl mb-4"></i>
+        <p class="text-ink-200 text-sm leading-relaxed mb-6">"가맹점 확장 속도가 중요했는데, 공용 주방 덕분에 인테리어 기간 없이 바로 3호점까지 늘릴 수 있었어요."</p>
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-300 flex items-center justify-center"><i class="fa-solid fa-user"></i></span>
+          <div>
+            <p class="text-sm font-bold text-white">박O영 대표님</p>
+            <p class="text-xs text-ink-400">홍대점 · 프랜차이즈 가맹점</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
+        <i class="fa-solid fa-quote-left text-brand-400 text-2xl mb-4"></i>
+        <p class="text-ink-200 text-sm leading-relaxed mb-6">"위생 관리와 방역을 본사에서 체계적으로 지원해주니, 혼자 운영해도 안심이 됩니다. 마케팅 연계도 큰 도움이 됐어요."</p>
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 rounded-full bg-brand-500/20 text-brand-300 flex items-center justify-center"><i class="fa-solid fa-user"></i></span>
+          <div>
+            <p class="text-sm font-bold text-white">이O민 사장님</p>
+            <p class="text-xs text-ink-400">홍대점 · 단일 메뉴 전문점</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section id="faq" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand-600 font-bold text-sm mb-3 tracking-wide">FAQ</p>
+      <h2 class="text-balance text-2xl sm:text-3xl lg:text-4xl font-black text-ink-900 leading-tight">
+        자주 묻는 질문
+      </h2>
+    </div>
+
+    <div class="space-y-3" id="accordion">
+      <div class="accordion-item border border-ink-100 rounded-2xl overflow-hidden">
+        <button class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 lg:p-6 text-left bg-ink-50 hover:bg-ink-100 transition">
+          <span class="font-bold text-ink-900">창업 비용은 정확히 얼마나 드나요?</span>
+          <i class="fa-solid fa-plus accordion-icon text-brand-500"></i>
+        </button>
+        <div class="accordion-content bg-white">
+          <p class="p-5 lg:p-6 pt-0 text-sm text-ink-600 leading-relaxed">지점과 호실 규모에 따라 차이가 있으나, 평균적으로 보증금과 초기 운영비를 포함해 약 1,000만 원대로 시작이 가능합니다. 별도의 권리금이나 인테리어 공사비가 발생하지 않아 초기 자본 부담이 매우 낮습니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-ink-100 rounded-2xl overflow-hidden">
+        <button class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 lg:p-6 text-left bg-ink-50 hover:bg-ink-100 transition">
+          <span class="font-bold text-ink-900">계약 조건과 계약 기간은 어떻게 되나요?</span>
+          <i class="fa-solid fa-plus accordion-icon text-brand-500"></i>
+        </button>
+        <div class="accordion-content bg-white">
+          <p class="p-5 lg:p-6 pt-0 text-sm text-ink-600 leading-relaxed">기본 계약 기간은 1년 단위이며, 희망 시 단기 계약 및 연장 계약도 협의 가능합니다. 계약 전 담당 매니저와의 상담을 통해 업종, 운영 시간, 필요 설비 등을 확인한 뒤 맞춤 조건을 안내드립니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-ink-100 rounded-2xl overflow-hidden">
+        <button class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 lg:p-6 text-left bg-ink-50 hover:bg-ink-100 transition">
+          <span class="font-bold text-ink-900">주방 시설과 설비는 어떤 것이 제공되나요?</span>
+          <i class="fa-solid fa-plus accordion-icon text-brand-500"></i>
+        </button>
+        <div class="accordion-content bg-white">
+          <p class="p-5 lg:p-6 pt-0 text-sm text-ink-600 leading-relaxed">기본 조리 설비(렌지, 후드, 냉장·냉동고), 급배수 시설, 환기 시스템이 완비된 풀옵션 공간을 제공합니다. 또한 공용 창고, 포장재 보관 공간, 위생·방역 관리 서비스도 함께 이용하실 수 있습니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-ink-100 rounded-2xl overflow-hidden">
+        <button class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 lg:p-6 text-left bg-ink-50 hover:bg-ink-100 transition">
+          <span class="font-bold text-ink-900">여러 브랜드를 동시에 운영할 수 있나요?</span>
+          <i class="fa-solid fa-plus accordion-icon text-brand-500"></i>
+        </button>
+        <div class="accordion-content bg-white">
+          <p class="p-5 lg:p-6 pt-0 text-sm text-ink-600 leading-relaxed">네, 가능합니다. 키친빌리지는 멀티 브랜드 운영에 최적화된 레이아웃을 제공하여, 하나의 주방에서 여러 배달 브랜드를 함께 운영하거나 프랜차이즈 가맹점을 확장하는 사장님들이 많습니다.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item border border-ink-100 rounded-2xl overflow-hidden">
+        <button class="accordion-trigger w-full flex items-center justify-between gap-4 p-5 lg:p-6 text-left bg-ink-50 hover:bg-ink-100 transition">
+          <span class="font-bold text-ink-900">마케팅이나 배달앱 입점은 지원해주시나요?</span>
+          <i class="fa-solid fa-plus accordion-icon text-brand-500"></i>
+        </button>
+        <div class="accordion-content bg-white">
+          <p class="p-5 lg:p-6 pt-0 text-sm text-ink-600 leading-relaxed">주요 배달 플랫폼 입점 가이드와 초기 마케팅 연계 서비스를 지원하며, 입점 브랜드 간 공동 프로모션 기회도 제공하고 있습니다. 자세한 내용은 상담 신청 시 안내드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT / CTA ======================= -->
+<section id="contact" class="py-20 lg:py-28 bg-ink-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-10 bg-white rounded-3xl shadow-soft overflow-hidden border border-ink-100">
+      <!-- Left info -->
+      <div class="hero-bg noise-grid p-10 lg:p-14 flex flex-col justify-between">
+        <div>
+          <p class="text-brand-400 font-bold text-sm mb-3 tracking-wide">GET STARTED</p>
+          <h2 class="text-balance text-2xl sm:text-3xl font-black text-white leading-tight mb-5">
+            지금 상담 신청하고<br>맞춤 입점 조건을 받아보세요
+          </h2>
+          <p class="text-ink-300 text-sm leading-relaxed mb-10">전담 매니저가 1:1로 창업 비용, 지점, 계약 조건까지 꼼꼼하게 안내해 드립니다.</p>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3 text-ink-200 text-sm">
+            <span class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-solid fa-phone text-brand-400"></i></span>
+            대표번호 1588-0000 (평일 09:00~18:00)
+          </div>
+          <div class="flex items-center gap-3 text-ink-200 text-sm">
+            <span class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-solid fa-envelope text-brand-400"></i></span>
+            partner@bananafnb.co.kr
+          </div>
+          <div class="flex items-center gap-3 text-ink-200 text-sm">
+            <span class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center"><i class="fa-solid fa-location-dot text-brand-400"></i></span>
+            서울 마포구 홍대입구 (홍대점)
+          </div>
+        </div>
+      </div>
+
+      <!-- Right form -->
+      <div class="p-10 lg:p-14">
+        <form id="contact-form" class="space-y-5">
+          <div>
+            <label class="block text-sm font-bold text-ink-800 mb-2">이름 / 상호</label>
+            <input type="text" required placeholder="홍길동 / OO치킨" class="w-full px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-ink-800 mb-2">연락처</label>
+            <input type="tel" required placeholder="010-0000-0000" class="w-full px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-ink-800 mb-2">관심 지점</label>
+            <select class="w-full px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm bg-white">
+              <option>홍대점</option>
+              <option>강서 화곡점 (준비중)</option>
+              <option>인천 부평점 (오픈예정)</option>
+              <option>상담 후 결정</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-ink-800 mb-2">문의 내용</label>
+            <textarea rows="3" placeholder="창업 희망 업종, 예산 등을 남겨주시면 더 정확한 상담이 가능합니다." class="w-full px-4 py-3 rounded-xl border border-ink-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-base px-6 py-4 rounded-xl shadow-card transition">
+            상담 신청 보내기 <i class="fa-solid fa-paper-plane"></i>
+          </button>
+          <p class="text-xs text-ink-400 text-center">신청 시 <a href="#" class="underline hover:text-brand-600">개인정보처리방침</a>에 동의하는 것으로 간주됩니다.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-ink-900 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-10 border-b border-white/10">
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="20" r="12.5" stroke="white" stroke-width="2.4"/>
+              <line x1="28" y1="20" x2="37" y2="20" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="37.3" cy="20" r="1.6" fill="white"/>
+              <ellipse cx="12" cy="15.5" rx="2.3" ry="3.6" stroke="white" stroke-width="1.6"/>
+              <line x1="12" y1="19" x2="12" y2="27" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="19" y1="12" x2="19" y2="18" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="21.5" y1="12" x2="21.5" y2="18" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="20.2" y1="18" x2="20.2" y2="27" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="text-xl font-black text-white">키친빌리지</span>
+        </div>
+        <p class="text-ink-400 text-sm leading-relaxed">
+          바나나F&B가 운영하는 공유주방 브랜드, 키친빌리지는 소자본 창업과 프랜차이즈 확장을 지원합니다.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
+        <div>
+          <p class="text-white font-bold mb-3">바로가기</p>
+          <ul class="space-y-2 text-ink-400">
+            <li><a href="#brand" class="hover:text-brand-400">브랜드 소개</a></li>
+            <li><a href="#locations" class="hover:text-brand-400">지점안내</a></li>
+            <li><a href="#benefits" class="hover:text-brand-400">입점혜택</a></li>
+            <li><a href="#cases" class="hover:text-brand-400">성공사례</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-white font-bold mb-3">고객지원</p>
+          <ul class="space-y-2 text-ink-400">
+            <li><a href="#faq" class="hover:text-brand-400">자주 묻는 질문</a></li>
+            <li><a href="#contact" class="hover:text-brand-400">입점문의</a></li>
+            <li><a href="tel:1588-0000" class="hover:text-brand-400">1588-0000</a></li>
+          </ul>
+        </div>
+        <div class="col-span-2 sm:col-span-1">
+          <p class="text-white font-bold mb-3">정책</p>
+          <ul class="space-y-2 text-ink-400">
+            <li><a href="#" class="hover:text-brand-400">이용약관</a></li>
+            <li><a href="#" class="hover:text-brand-400">개인정보처리방침</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-8">
+      <p class="text-ink-500 text-xs leading-relaxed mb-2">
+        (주)바나나F&B · 대표 OOO · 사업자등록번호 000-00-00000 · 통신판매업신고 제0000-서울마포-00000호<br>
+        키친빌리지 홍대점 · 서울 마포구 홍대입구 일대 · 대표번호 1588-0000 · 이메일 partner@bananafnb.co.kr
+      </p>
+      <p class="text-ink-500 text-xs">© 2026 BANANA F&B Co., Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= SCRIPTS ======================= -->
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  let menuOpen = false;
+
+  function setMenu(open) {
+    menuOpen = open;
+    if (open) {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+      iconOpen.classList.add('hidden');
+      iconClose.classList.remove('hidden');
+    } else {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+  }
+
+  menuBtn.addEventListener('click', () => setMenu(!menuOpen));
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const item = trigger.closest('.accordion-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item.open').forEach(openItem => {
+        if (openItem !== item) openItem.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Contact form (demo submit)
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('상담 신청이 접수되었습니다. 담당 매니저가 빠르게 연락드리겠습니다.');
+    form.reset();
+  });
+
+  // Header shadow on scroll
+  const header = document.getElementById('top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header.classList.add('shadow-sm');
+    } else {
+      header.classList.remove('shadow-sm');
+    }
+  });
+</script>
+
+</body>
+</html>
